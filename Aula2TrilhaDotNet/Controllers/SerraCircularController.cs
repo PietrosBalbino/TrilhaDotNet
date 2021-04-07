@@ -41,7 +41,6 @@ namespace Aula2TrilhaDotNet.Controllers {
             return Ok(_serraCircular.AtualizarSerraCircular(novaSerraCircular));
         }
 
-
         [HttpDelete("{id}")]
         public IActionResult serraCircularDelete(int id) {
             return Ok(_serraCircular.DeletarSerraCircular(id));
