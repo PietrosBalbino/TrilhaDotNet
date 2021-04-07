@@ -13,5 +13,13 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTO\AdicionarSerraCircular\" />
+    <Folder Include="DTO\AtualizaSerraCircular\" />
+    <Folder Include="DTO\RemoverSerraCircular\" />
+    <Folder Include="DTO\RetornarListaSerraCircular\" />
+    <Folder Include="DTO\RotrnanarSerraCircularId\" />
+  </ItemGroup>
+
 
 </Project>
