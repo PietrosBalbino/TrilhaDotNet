@@ -14,11 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTO\AdicionarSerraCircular\" />
-    <Folder Include="DTO\AtualizaSerraCircular\" />
-    <Folder Include="DTO\RemoverSerraCircular\" />
-    <Folder Include="DTO\RetornarListaSerraCircular\" />
-    <Folder Include="DTO\RotrnanarSerraCircularId\" />
+    <Folder Include="DTO\SerraCircular\RemoverSerraCircular\" />
+    <Folder Include="DTO\SerraCircular\RetornarListaSerraCircular\" />
+    <Folder Include="DTO\SerraCircular\RotrnanarSerraCircularId\" />
   </ItemGroup>
 
 
