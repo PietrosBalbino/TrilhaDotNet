@@ -1,3 +1,5 @@
+using Aula2TrilhaDotNet.Adapter;
+using Aula2TrilhaDotNet.Bordas.Adapter;
 using Aula2TrilhaDotNet.Context;
 using Aula2TrilhaDotNet.Repositorio;
 using Aula2TrilhaDotNet.Services;
@@ -37,7 +39,10 @@ namespace Aula2TrilhaDotNet {
             services.AddScoped<IRemoverSerraCircularUseCase, RemoverSerraCircularUseCase>();
             services.AddScoped<IRetornarListaSerraCircularUseCase, RetornarListaSerraCircularUseCase>();
             services.AddScoped<IRetornarSerraCircularIdUseCase, RetornarSerraCircularIdUseCase>();
+            
             services.AddScoped<IRepositorioSerraCircular, RepositorioSerraCircular>();
+          
+            services.AddScoped<IAdicionarSerraCircularAdapter, AdicionarSerraCircularAdapter>();
 
             
             services.AddControllers();

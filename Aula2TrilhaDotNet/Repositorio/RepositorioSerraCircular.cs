@@ -1,5 +1,6 @@
 ﻿using Aula2TrilhaDotNet.Context;
 using Aula2TrilhaDotNet.DTO.SerraCircular.AdicionarSerraCircular;
+using Aula2TrilhaDotNet.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Aula2TrilhaDotNet.Repositorio {
             _local = local;
         }
 
-        public void Add(AdicionarSerraCircularRequest request) {
+        public void Add(SerraCircular request) {
             _local.Add(request);
             _local.SaveChanges();
 

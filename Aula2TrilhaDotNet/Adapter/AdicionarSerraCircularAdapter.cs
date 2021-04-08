@@ -9,7 +9,17 @@ using System.Threading.Tasks;
 namespace Aula2TrilhaDotNet.Adapter {
     public class AdicionarSerraCircularAdapter : IAdicionarSerraCircularAdapter {
         public SerraCircular converterRequesteParaSerraCircular(AdicionarSerraCircularRequest request) {
-            throw new NotImplementedException();
+
+            var novaSerraCircular = new SerraCircular();
+
+            novaSerraCircular.nome = request.nome;
+            novaSerraCircular.preco = request.preco;
+            novaSerraCircular.rotacao = request.rotacao;
+            novaSerraCircular.consumo = request.consumo;
+            novaSerraCircular.descricao = request.descricao;
+            novaSerraCircular.tamanho_disco = request.tamanho_disco;
+
+            return novaSerraCircular;            
         }
     }
 }
