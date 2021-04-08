@@ -1,5 +1,7 @@
 using Aula2TrilhaDotNet.Context;
+using Aula2TrilhaDotNet.Repositorio;
 using Aula2TrilhaDotNet.Services;
+using Aula2TrilhaDotNet.UseCase;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,7 +32,14 @@ namespace Aula2TrilhaDotNet {
 
             services.AddScoped<ISerraCircularService, SerraCircularService>();
 
+            services.AddScoped<IAdicionarSerraCircularUseCase, AdicionarSerraCircularUseCase>();
+            services.AddScoped<IAtulaizarSerraCircularUseCase, AtulaizarSerraCircularUseCase>();
+            services.AddScoped<IRemoverSerraCircularUseCase, RemoverSerraCircularUseCase>();
+            services.AddScoped<IRetornarListaSerraCircularUseCase, RetornarListaSerraCircularUseCase>();
+            services.AddScoped<IRetornarSerraCircularIdUseCase, RetornarSerraCircularIdUseCase>();
+            services.AddScoped<IRepositorioSerraCircular, RepositorioSerraCircular>();
 
+            
             services.AddControllers();
         }
 

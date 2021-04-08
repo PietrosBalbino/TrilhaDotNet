@@ -1,0 +1,11 @@
+﻿using Aula2TrilhaDotNet.DTO.SerraCircular.AdicionarSerraCircular;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Aula2TrilhaDotNet.Repositorio {
+    public interface IRepositorioSerraCircular  {
+        public void Add(AdicionarSerraCircularRequest request);
+    }
+}
