@@ -43,6 +43,7 @@ namespace Aula2TrilhaDotNet {
             services.AddScoped<IRepositorioSerraCircular, RepositorioSerraCircular>();
           
             services.AddScoped<IAdicionarSerraCircularAdapter, AdicionarSerraCircularAdapter>();
+            services.AddScoped<IAtualizarSerraCircularAdapter, AtualizarSerraCircularAdapter>();
 
             
             services.AddControllers();

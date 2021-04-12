@@ -5,5 +5,6 @@ using System.Threading.Tasks;
 
 namespace Aula2TrilhaDotNet.DTO.SerraCircular.AtualizaSerraCircular {
     public class AtualizarSerraCircularResponse {
+        public string msg { get; set; }
     }
 }

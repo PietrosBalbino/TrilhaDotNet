@@ -1,5 +1,7 @@
 ﻿using Aula2TrilhaDotNet.Context;
+using Aula2TrilhaDotNet.DTO.SerraCircular.AtualizaSerraCircular;
 using Aula2TrilhaDotNet.Entities;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace Aula2TrilhaDotNet.Repositorio {
@@ -25,6 +27,13 @@ namespace Aula2TrilhaDotNet.Repositorio {
             }
             _local.serra_circular.Remove(obj);
             _local.SaveChanges();
+        }
+
+        public void Update(SerraCircular request) {
+            _local.serra_circular.Attach(request);
+            _local.Entry(request).State = EntityState.Modified;
+            _local.SaveChanges();
+
         }
     }
 }
