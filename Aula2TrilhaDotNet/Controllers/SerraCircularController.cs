@@ -1,4 +1,5 @@
 ﻿using Aula2TrilhaDotNet.DTO.SerraCircular.AdicionarSerraCircular;
+using Aula2TrilhaDotNet.DTO.SerraCircular.RemoverSerraCircular;
 using Aula2TrilhaDotNet.Entities;
 using Aula2TrilhaDotNet.Services;
 using Aula2TrilhaDotNet.UseCase;
@@ -18,15 +19,18 @@ namespace Aula2TrilhaDotNet.Controllers {
         private readonly ILogger<SerraCircularController> _logger;
         private readonly ISerraCircularService _serraCircular;
         private readonly IAdicionarSerraCircularUseCase _adicionarSerraCircularUseCase;
+        private readonly IRemoverSerraCircularUseCase _removerSerraCircularUseCase;
 
         public SerraCircularController(
             ILogger<SerraCircularController> logger,
-            ISerraCircularService serraCircular, 
-            IAdicionarSerraCircularUseCase adicionarSerraCircularUseCase) {
+            ISerraCircularService serraCircular,
+            IAdicionarSerraCircularUseCase adicionarSerraCircularUseCase, 
+            IRemoverSerraCircularUseCase removerSerraCircularUseCase) {
 
             _logger = logger;
             _serraCircular = serraCircular;
             _adicionarSerraCircularUseCase = adicionarSerraCircularUseCase;
+            _removerSerraCircularUseCase = removerSerraCircularUseCase;
         }
 
         [HttpGet]
@@ -51,7 +55,9 @@ namespace Aula2TrilhaDotNet.Controllers {
 
         [HttpDelete("{id}")]
         public IActionResult serraCircularDelete(int id) {
-            return Ok(_serraCircular.DeletarSerraCircular(id));
+            var request = new RemoverSerraCircularRequest();
+            request.id = id;
+            return Ok(_removerSerraCircularUseCase.Executar(request));
         }
 
     }

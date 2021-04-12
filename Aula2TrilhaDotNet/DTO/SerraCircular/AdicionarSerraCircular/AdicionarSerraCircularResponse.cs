@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 namespace Aula2TrilhaDotNet.DTO.SerraCircular.AdicionarSerraCircular {
     public class AdicionarSerraCircularResponse {
 
-        public string msg { get; set; }  
+        public string msg { get; set; } 
+        public int id { get; set; }
     }
 }

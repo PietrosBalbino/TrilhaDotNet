@@ -5,5 +5,7 @@ using System.Threading.Tasks;
 
 namespace Aula2TrilhaDotNet.DTO.SerraCircular.RemoverSerraCircular {
     public class RemoverSerraCircularResponse {
+
+        public string msg { get; set; }
     }
 }

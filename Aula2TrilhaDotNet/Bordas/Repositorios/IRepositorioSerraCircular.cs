@@ -1,12 +1,8 @@
-﻿using Aula2TrilhaDotNet.DTO.SerraCircular.AdicionarSerraCircular;
-using Aula2TrilhaDotNet.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Aula2TrilhaDotNet.Entities;
 
 namespace Aula2TrilhaDotNet.Repositorio {
     public interface IRepositorioSerraCircular  {
-        public void Add(SerraCircular request);
+        public int Add(SerraCircular request);
+        public void Remove(int id);
     }
 }

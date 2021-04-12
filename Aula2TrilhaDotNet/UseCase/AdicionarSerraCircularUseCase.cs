@@ -24,7 +24,7 @@ namespace Aula2TrilhaDotNet.UseCase {
             var serraCircularAdicionar = _adapter.converterRequesteParaSerraCircular(request);
 
             try {
-                if (request.nome.Length < 20) {
+                if (request.nome.Length > 20) {
 
                     response.msg = "Erro ao adicionar Serra Circular - Não pode tem mais de 20 caracteres ";
                     return response;
@@ -33,6 +33,7 @@ namespace Aula2TrilhaDotNet.UseCase {
        
                 _RepositorioSerraCircular.Add(serraCircularAdicionar);
                 response.msg = "Serra Circular adicionada com sucesso!!";
+                response.id = serraCircularAdicionar.id;
                 return response;
 
             } catch  {
