@@ -22,9 +22,19 @@ namespace Aula2TrilhaDotNet.UseCase {
 
             var response = new AtualizarSerraCircularResponse();
             var serraCircularAtualizar = _adapter.converterRequesteParaSerraCircularAtualizar(request);
-            _repositorioSerraCircular.Update(serraCircularAtualizar);
-            response.msg = "Serra Circular atualizada!!";
-            return response;
+            try {
+               
+                _repositorioSerraCircular.Update(serraCircularAtualizar);
+                response.msg = "Serra Circular atualizada!!";
+                return response;
+
+            } catch  {
+
+                response.msg = "Erro ao atualizar a Serra Circular; O ID informado está correto?";
+                return response;
+            }
+            
+            
         }
     }
 }

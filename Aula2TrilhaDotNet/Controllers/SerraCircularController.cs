@@ -22,24 +22,27 @@ namespace Aula2TrilhaDotNet.Controllers {
         private readonly IAdicionarSerraCircularUseCase _adicionarSerraCircularUseCase;
         private readonly IRemoverSerraCircularUseCase _removerSerraCircularUseCase;
         private readonly IAtulaizarSerraCircularUseCase _atulaizarSerraCircularUseCase;
+        private readonly IRetornarListaSerraCircularUseCase _retornarListaSerraCircularUseCase;
 
         public SerraCircularController(
             ILogger<SerraCircularController> logger,
             ISerraCircularService serraCircular,
             IAdicionarSerraCircularUseCase adicionarSerraCircularUseCase,
             IRemoverSerraCircularUseCase removerSerraCircularUseCase,
-            IAtulaizarSerraCircularUseCase atulaizarSerraCircularUseCase) {
+            IAtulaizarSerraCircularUseCase atulaizarSerraCircularUseCase, 
+            IRetornarListaSerraCircularUseCase retornarListaSerraCircularUseCase) {
 
             _logger = logger;
             _serraCircular = serraCircular;
             _adicionarSerraCircularUseCase = adicionarSerraCircularUseCase;
             _removerSerraCircularUseCase = removerSerraCircularUseCase;
             _atulaizarSerraCircularUseCase = atulaizarSerraCircularUseCase;
+            _retornarListaSerraCircularUseCase = retornarListaSerraCircularUseCase;
         }
 
         [HttpGet]
         public IActionResult TodasSerrasCircular() {
-            return Ok(_serraCircular.RetonarListaSerraCircular());
+            return Ok(_retornarListaSerraCircularUseCase.Executar());
         }
 
         [HttpGet("{id}")]

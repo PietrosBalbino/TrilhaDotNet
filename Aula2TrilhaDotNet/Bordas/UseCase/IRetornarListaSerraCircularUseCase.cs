@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace Aula2TrilhaDotNet.UseCase {
     public interface IRetornarListaSerraCircularUseCase {
-        RetornarListaSerraCircularResponse Executar(RetornarListaSerraCircularRequest request);
+        RetornarListaSerraCircularResponse Executar();
     }
 }
