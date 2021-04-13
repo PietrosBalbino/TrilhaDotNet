@@ -26,7 +26,7 @@ namespace Aula2TrilhaDotNet.UseCase {
             try {
                 if (request.nome.Length > 20) {
 
-                    response.msg = "Erro ao adicionar Serra Circular - Não pode tem mais de 20 caracteres ";
+                    response.msg = "Erro ao adicionar Serra Circular - Não pode ter mais de 20 caracteres ";
                     return response;
 
                 }
