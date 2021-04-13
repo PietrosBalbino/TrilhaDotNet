@@ -42,6 +42,16 @@ namespace Aula2TrilhaDotNet.Repositorio {
            return _local.serra_circular.ToList();
         }
 
+        public SerraCircular Read (int id) {
+            foreach (var serraCircular in _local.serra_circular) {
+                if (serraCircular.id.Equals(id)) {
+                    //return _local.serra_circular.Where(d => d.id == id).FirstOrDefault();
+                    return serraCircular;
+                }
+            }
+            return null;            
+        }
+
 
     }
 }

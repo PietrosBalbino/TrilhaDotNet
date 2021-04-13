@@ -8,5 +8,6 @@ namespace Aula2TrilhaDotNet.Repositorio {
         public void Remove(int id);
         public void Update(SerraCircular request);
         public List<SerraCircular> Listar();
+        public SerraCircular Read(int id);
     }
 }

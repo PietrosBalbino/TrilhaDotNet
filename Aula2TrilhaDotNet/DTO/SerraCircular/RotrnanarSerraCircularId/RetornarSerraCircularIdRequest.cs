@@ -5,5 +5,6 @@ using System.Threading.Tasks;
 
 namespace Aula2TrilhaDotNet.DTO.SerraCircular.RotrnanarSerraCircularId {
     public class RetornarSerraCircularIdRequest {
+        public int id { get; set; }
     }
 }

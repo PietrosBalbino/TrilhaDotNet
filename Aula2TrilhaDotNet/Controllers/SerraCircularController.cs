@@ -1,6 +1,7 @@
 ﻿using Aula2TrilhaDotNet.DTO.SerraCircular.AdicionarSerraCircular;
 using Aula2TrilhaDotNet.DTO.SerraCircular.AtualizaSerraCircular;
 using Aula2TrilhaDotNet.DTO.SerraCircular.RemoverSerraCircular;
+using Aula2TrilhaDotNet.DTO.SerraCircular.RotrnanarSerraCircularId;
 using Aula2TrilhaDotNet.Entities;
 using Aula2TrilhaDotNet.Services;
 using Aula2TrilhaDotNet.UseCase;
@@ -23,14 +24,17 @@ namespace Aula2TrilhaDotNet.Controllers {
         private readonly IRemoverSerraCircularUseCase _removerSerraCircularUseCase;
         private readonly IAtulaizarSerraCircularUseCase _atulaizarSerraCircularUseCase;
         private readonly IRetornarListaSerraCircularUseCase _retornarListaSerraCircularUseCase;
+        private readonly IRetornarSerraCircularIdUseCase _retornarSerraCircularIdUseCase;
+
 
         public SerraCircularController(
             ILogger<SerraCircularController> logger,
             ISerraCircularService serraCircular,
             IAdicionarSerraCircularUseCase adicionarSerraCircularUseCase,
             IRemoverSerraCircularUseCase removerSerraCircularUseCase,
-            IAtulaizarSerraCircularUseCase atulaizarSerraCircularUseCase, 
-            IRetornarListaSerraCircularUseCase retornarListaSerraCircularUseCase) {
+            IAtulaizarSerraCircularUseCase atulaizarSerraCircularUseCase,
+            IRetornarListaSerraCircularUseCase retornarListaSerraCircularUseCase,
+            IRetornarSerraCircularIdUseCase retornarSerraCircularIdUseCase) {
 
             _logger = logger;
             _serraCircular = serraCircular;
@@ -38,6 +42,8 @@ namespace Aula2TrilhaDotNet.Controllers {
             _removerSerraCircularUseCase = removerSerraCircularUseCase;
             _atulaizarSerraCircularUseCase = atulaizarSerraCircularUseCase;
             _retornarListaSerraCircularUseCase = retornarListaSerraCircularUseCase;
+            _retornarSerraCircularIdUseCase = retornarSerraCircularIdUseCase;
+
         }
 
         [HttpGet]
@@ -46,8 +52,10 @@ namespace Aula2TrilhaDotNet.Controllers {
         }
 
         [HttpGet("{id}")]
-        public IActionResult serraCircular(int id) {
-            return Ok(_serraCircular.RetornarSerraCircularPorId(id));
+        public IActionResult serraCircular(int id ) {
+            var request = new RetornarSerraCircularIdRequest();
+            request.id = id;           
+            return Ok(_retornarSerraCircularIdUseCase.Executar(request));
         }
 
         [HttpPost]
