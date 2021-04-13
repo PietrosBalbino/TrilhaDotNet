@@ -23,14 +23,20 @@ namespace Aula2TrilhaDotNet.UseCase {
             var response = new AtualizarSerraCircularResponse();
             var serraCircularAtualizar = _adapter.converterRequesteParaSerraCircularAtualizar(request);
             try {
+
+                if (request.nome.Length > 20) {
+                    response.msg = "Erro ao adicionar Serra Circular - Não pode ter mais de 20 caracteres ";
+                    return response;
+                }
                
                 _repositorioSerraCircular.Update(serraCircularAtualizar);
-                response.msg = "Serra Circular atualizada!!";
+
+                response.msg = $"Serra Circular ID: {request.id} atualizada!!";
                 return response;
 
             } catch  {
 
-                response.msg = "Erro ao atualizar a Serra Circular; O ID informado está correto?";
+                response.msg = "Erro ao atualizar a Serra Circular";
                 return response;
             }
             
