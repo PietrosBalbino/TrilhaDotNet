@@ -22,11 +22,11 @@ namespace Aula2TrilhaDotNet.Repositorio {
         }
 
         public void Remove(int id) {
-            var obj = _local.serra_circular.Where(d => d.id == id).FirstOrDefault();
-            if (obj == null) {
+            var serraCircular = _local.serra_circular.FirstOrDefault(d => d.id == id);
+            if (serraCircular == null) {
                 throw new System.Exception("A serra circular nao existe");
             }
-            _local.serra_circular.Remove(obj);
+            _local.serra_circular.Remove(serraCircular);
             _local.SaveChanges();
         }
 

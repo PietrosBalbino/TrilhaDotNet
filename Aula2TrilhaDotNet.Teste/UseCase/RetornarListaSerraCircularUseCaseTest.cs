@@ -22,7 +22,7 @@ namespace Aula2TrilhaDotNet.Teste.UseCase {
         }
 
         [Fact]
-        public void SerraCircular_Remover_QuandoRetornarSucesso() {
+        public void SerraCircular_Retornar_Lista_QuandoRetornarSucesso() {
             var response = new RetornarListaSerraCircularResponse();
             var serraCircular = new SerraCircular();
             response.msg = "Lista de Serra Circular retornada com sucesso";
